@@ -6,9 +6,13 @@ import { HeroSkeleton } from "@/components/ui/loading-skeleton"
 import { useLanguage } from "../../context/language-context"
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import { About, QuickAction, Slider } from "@/lib/types"
 
 interface HeroSectionProps {
   isLoading?: boolean
+    about?: About | null
+  quickActions?: QuickAction[]
+  slider?: Slider | null
 }
 
 const quickActions = [
@@ -47,7 +51,7 @@ const sampleVideos = [
 
 const backgroundIcons = [Heart, Activity, Stethoscope, Cross, Heart, Activity, Stethoscope, Cross]
 
-export function HeroSection({ isLoading }: HeroSectionProps) {
+export function HeroSection({ isLoading, about }: HeroSectionProps) {
   const { language } = useLanguage()
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
 

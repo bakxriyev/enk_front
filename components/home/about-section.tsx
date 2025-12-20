@@ -4,9 +4,11 @@ import Image from "next/image"
 import { Globe, Users, Cpu, DockIcon, HelpCircle, Heart, Stethoscope, Activity } from "lucide-react"
 import { Skeleton } from "@/components/ui/loading-skeleton"
 import { useLanguage } from "../../context/language-context"
+import { About } from "@/lib/types"
 
 interface AboutSectionProps {
   isLoading?: boolean
+  about?: About | null
 }
 
 const features = [
@@ -19,7 +21,7 @@ const features = [
 
 const backgroundIcons = [Heart, Stethoscope, Activity, Heart, Stethoscope]
 
-export function AboutSection({ isLoading }: AboutSectionProps) {
+export function AboutSection({ isLoading, about }: AboutSectionProps) {
   const { language, t } = useLanguage()
 
   if (isLoading) {

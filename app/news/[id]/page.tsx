@@ -163,7 +163,7 @@ export default function NewsDetailPage() {
   const photoUrl = getImageUrl("news", news.photo)
   const videoUrl = news.video ? getVideoUrl("news", news.video) : null
 
-  const galleryImages = news.gallery || []
+  const galleryImages = news.photo || []
 
   return (
     <div className="min-h-screen bg-gray-50">
