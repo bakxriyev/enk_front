@@ -37,6 +37,7 @@ export interface NewsItem {
   video: string | null
   date: string
   created_at?: string
+   gallery: string[]
 }
 
 export interface BlogPost {
