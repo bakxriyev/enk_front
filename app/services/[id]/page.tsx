@@ -87,14 +87,14 @@ export default function ServiceDetailPage() {
       data.append("appointment_date", formData.appointment_date)
       data.append("appointment_time", formData.appointment_time)
 
-      await api.post("/users", data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
+      await fetch("/users", {
+  method: "POST",
+  body: data,
+})
 
       toast({
         title: t("Muvaffaqiyatli!", "Успешно!"),
         description: t("Qabulga yozilish muvaffaqiyatli amalga oshirildi.", "Запись на прием успешно отправлена."),
-        variant: "success",
       })
       setIsModalOpen(false)
       setFormData({
@@ -281,7 +281,7 @@ export default function ServiceDetailPage() {
               <div className="mt-16">
                 <h3 className="text-3xl font-extrabold text-gray-900 mb-8 text-center lg:text-left">{t("Batafsil ma'lumotlar", "Подробности")}</h3>
                 <Accordion type="single" collapsible className="w-full">
-                  {service.details.map((detail, index) => {
+                  {service.details.map((detail:any, index:any) => {
                     const detailVideoUrl = detail.video ? getVideoUrl("services", detail.video) : null
                     return (
                       <AccordionItem key={detail.id} value={`item-${index}`} className="border-b border-gray-200">
