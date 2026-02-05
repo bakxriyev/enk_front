@@ -281,7 +281,7 @@ export default function ServiceDetailPage() {
               <div className="mt-16">
                 <h3 className="text-3xl font-extrabold text-gray-900 mb-8 text-center lg:text-left">{t("Batafsil ma'lumotlar", "Подробности")}</h3>
                 <Accordion type="single" collapsible className="w-full">
-                  {service.details.map((detail, index) => {
+                  {service.details.map((detail:any, index:any) => {
                     const detailVideoUrl = detail.video ? getVideoUrl("services", detail.video) : null
                     return (
                       <AccordionItem key={detail.id} value={`item-${index}`} className="border-b border-gray-200">
