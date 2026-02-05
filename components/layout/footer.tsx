@@ -44,11 +44,11 @@ export function Footer() {
   // Static defaults
   const defaults = {
     description:
-      " ENDOKRINOLOGIYA SHIFOXONASI",
+      " SOG`LOM ONA VA BOLA KLINIKASI",
     description_ru:
-      " ENDOKRINOLOGIYA SHIFOXONASI",
-    manzil: "Клх. Правда Ташкентская область",
-    manzil_ru: "Клх. Правда Ташкентская область",
+      " SOG`LOM ONA VA BOLA KLINIKASI",
+    manzil: "Тошкент шахар Бектемир тумани  Обод кучаси 123 уй",
+    manzil_ru: "Тошкент шахар Бектемир тумани  Обод кучаси 123 уй",
   }
 
   if (isLoading) {
@@ -92,7 +92,7 @@ export function Footer() {
                 <div className="flex animate-marquee whitespace-nowrap">
                   {[...Array(8)].map((_, i) => (
                     <span key={i} className="mx-8 text-xl md:text-3xl font-bold tracking-wider">
-                   ENDOKRINOLOGIYA SHIFOXONASI
+                   SOG`LOM ONA VA BOLA KLINIKASI
                     </span>
                   ))}
                 </div>
@@ -114,7 +114,7 @@ export function Footer() {
                 {about?.logo ? (
                   <Image
                     src={getImageUrl("about", about.logo) || "/placeholder.svg"}
-                    alt={about?.full_name || "ENDOKRINOLOGIYA"}
+                    alt={about?.full_name || "SOG`LOM ONA VA BOLA KLINIKASI"}
                     width={150}
                     height={60}
                     className="h-12 w-auto object-contain"
@@ -122,7 +122,7 @@ export function Footer() {
                 ) : (
                   <div className="flex items-center gap-2">
                     <div className="bg-[#c41e3a] text-white px-3 py-1.5 rounded-full text-xs font-bold">
-                   ENDOKRINOLOGIYA SHIFOXONASI
+                   SOG`LOM ONA VA BOLA KLINIKASI
                     </div>
                     <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                       <span className="text-yellow-700 text-sm">✓</span>
@@ -133,7 +133,7 @@ export function Footer() {
 
               {/* Description - static */}
               <p className="text-sm text-gray-600 mb-5 leading-relaxed">
-                {language === "ru" ? defaults.description_ru : defaults.description}
+              SOG`LOM ONA VA BOLA KLINIKASI
               </p>
 
               {/* Social links */}
@@ -188,7 +188,7 @@ export function Footer() {
               <h4 className="font-semibold text-gray-900 mb-4">{t("Kontaktlar", "Контакты")}</h4>
               <div className="text-sm text-gray-600 space-y-2">
                 <p>{about?.phone || "+998 77 313 01 30"}</p>
-                <p>{about?.gmail || "info@endoclinic.uz"}</p>
+                <p>{about?.gmail || "info@onabolaclinic.uz"}</p>
               </div>
             </div>
           </div>
