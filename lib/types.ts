@@ -35,9 +35,9 @@ export interface NewsItem {
   matn_ru: string
   photo: string | null
   video: string | null
-  gallery: string[]
   date: string
   created_at?: string
+   gallery: string[]
 }
 
 export interface BlogPost {
@@ -94,7 +94,6 @@ export interface Service {
   photo: string | null
   video: string | null
   created_at?: string
-  details: any
 }
 
 export interface About {

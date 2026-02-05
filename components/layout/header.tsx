@@ -12,7 +12,7 @@ import type { About, Service, Direction } from "@/lib/types"
 
 const navItems = [
   { labelUz: "Bosh sahifa", labelRu: "Главная", href: "/", hasDropdown: false },
-  { labelUz: "Klinika haqida", labelRu: "О клинике", href: "/about", hasDropdown: false },
+  { labelUz: "Klinika haqida", labelRu: "О клинике", href: "/about", hasDropdown: true, dropdownType: "about" },
   { labelUz: "Xizmatlar", labelRu: "Услуги", href: "/services", hasDropdown: true, dropdownType: "services" },
   { labelUz: "Bo'limlar", labelRu: "Отделения", href: "/departments", hasDropdown: true, dropdownType: "departments" },
   { labelUz: "Shifokorlar", labelRu: "Врачи", href: "/doctors", hasDropdown: false },
@@ -93,8 +93,8 @@ export function Header() {
                 <Image
                   src={getImageUrl("about", about.logo) || "/placeholder.svg"}
                   alt="Logo"
-                  width={250}
-                  height={100}
+                  width={150}
+                  height={60}
                   className="h-12 w-auto object-contain"
                 />
               </div>
@@ -181,22 +181,22 @@ export function Header() {
   }
 
   return (
-    <header className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 sticky top-0 z-50 shadow-lg border-b border-slate-700/50">
+    <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2">
             {isLoading ? (
-              <div className="h-20 w-48 bg-slate-700 animate-pulse rounded" />
+              <div className="h-16 w-40 bg-gray-200 animate-pulse rounded" />
             ) : about?.logo ? (
               <Image
                 src={getImageUrl("about", about.logo) || "/placeholder.svg"}
                 alt={"Logo"}
-                width={220}
-                height={90}
-                className="h-20 w-auto object-contain brightness-0 invert"
+                width={180}
+                height={70}
+                className="h-16 w-auto object-contain"
               />
             ) : (
-              <span className="text-3xl font-bold text-white">LOGO</span>
+              <span className="text-2xl font-bold text-[#1e4a8d]">LOGO</span>
             )}
           </Link>
 
@@ -212,7 +212,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 px-3 py-2 text-sm font-medium text-white/90 hover:text-[#d32f2f] transition-colors",
+                    "flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#d32f2f] transition-colors",
                     activeDropdown === item.dropdownType && "text-[#d32f2f]",
                   )}
                 >
@@ -227,6 +227,7 @@ export function Header() {
 
                 {item.hasDropdown && activeDropdown === item.dropdownType && (
                   <div className="absolute top-full left-0 bg-white shadow-xl rounded-lg border animate-fade-in-up z-50">
+                    {/* Red top border */}
                     <div className="absolute top-0 left-4 right-4 h-0.5 bg-[#d32f2f]" />
                     {renderDropdownContent(item.dropdownType!)}
                   </div>
@@ -239,18 +240,18 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/results"
-              className="bg-gradient-to-r from-[#d32f2f] to-[#f44336] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105"
+              className="bg-[#d32f2f] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#b71c1c] transition-colors"
             >
               {t("Tahlil javoblari", "Результаты анализов")}
             </Link>
-            <div className="flex items-center border border-slate-600 rounded-full overflow-hidden bg-slate-800/50">
+            <div className="flex items-center border rounded-full overflow-hidden">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}
                   className={cn(
                     "px-3 py-1 text-sm font-medium transition-colors",
-                    language === lang.code ? "bg-[#d32f2f] text-white" : "text-white/80 hover:bg-slate-700",
+                    language === lang.code ? "bg-[#1e4a8d] text-white" : "text-gray-600 hover:bg-gray-100",
                   )}
                 >
                   {lang.label}
@@ -260,7 +261,7 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <button className="lg:hidden p-2 text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="lg:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -268,25 +269,26 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-slate-800 border-t border-slate-700 animate-fade-in-up">
+        <div className="lg:hidden bg-white border-t animate-fade-in-up">
           <nav className="flex flex-col py-4">
             {navItems.map((item) => (
               <div key={item.href}>
                 <Link
                   href={item.href}
-                  className="px-4 py-3 text-white/90 hover:bg-slate-700 hover:text-[#d32f2f] flex items-center justify-between"
+                  className="px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#d32f2f] flex items-center justify-between"
                   onClick={() => !item.hasDropdown && setIsMenuOpen(false)}
                 >
                   {language === "ru" ? item.labelRu : item.labelUz}
                   {item.hasDropdown && <ChevronDown size={16} />}
                 </Link>
+                {/* Mobile dropdown items */}
                 {item.hasDropdown && item.dropdownType === "services" && (
-                  <div className="bg-slate-900 px-6 py-2">
+                  <div className="bg-gray-50 px-6 py-2">
                     {services.slice(0, 5).map((service) => (
                       <Link
                         key={service.id}
                         href={`/services/${service.id}`}
-                        className="block py-2 text-sm text-white/70 hover:text-[#d32f2f]"
+                        className="block py-2 text-sm text-gray-600 hover:text-[#d32f2f]"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {language === "ru" ? service.title_ru || service.title : service.title}
@@ -295,12 +297,12 @@ export function Header() {
                   </div>
                 )}
                 {item.hasDropdown && item.dropdownType === "departments" && (
-                  <div className="bg-slate-900 px-6 py-2">
+                  <div className="bg-gray-50 px-6 py-2">
                     {departments.slice(0, 5).map((dept) => (
                       <Link
                         key={dept.id}
                         href={`/departments/${dept.id}`}
-                        className="block py-2 text-sm text-white/70 hover:text-[#d32f2f]"
+                        className="block py-2 text-sm text-gray-600 hover:text-[#d32f2f]"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {language === "ru" ? dept.title_ru || dept.title : dept.title}
@@ -310,21 +312,18 @@ export function Header() {
                 )}
               </div>
             ))}
-            <div className="px-4 py-3 border-t border-slate-700 mt-2 flex items-center justify-between">
-              <Link
-                href="/results"
-                className="bg-gradient-to-r from-[#d32f2f] to-[#f44336] text-white px-4 py-2 rounded-full text-center font-medium"
-              >
+            <div className="px-4 py-3 border-t mt-2 flex items-center justify-between">
+              <Link href="/results" className="bg-[#d32f2f] text-white px-4 py-2 rounded-full text-center font-medium">
                 {t("Tahlil javoblari", "Результаты анализов")}
               </Link>
-              <div className="flex items-center border border-slate-600 rounded-full overflow-hidden bg-slate-800/50">
+              <div className="flex items-center border rounded-full overflow-hidden">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
                     className={cn(
                       "px-3 py-1 text-sm font-medium transition-colors",
-                      language === lang.code ? "bg-[#d32f2f] text-white" : "text-white/80 hover:bg-slate-700",
+                      language === lang.code ? "bg-[#1e4a8d] text-white" : "text-gray-600 hover:bg-gray-100",
                     )}
                   >
                     {lang.label}

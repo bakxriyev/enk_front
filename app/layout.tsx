@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Ona-bola Hospital",
+  title: "ENDOKRINOLOGIYA KLINIKASI",
   description: "O`zbekistondagi eng yirik ko'p tarmoqli klinika",
   icons: {
     icon: "/logo.jpg",

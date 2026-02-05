@@ -3,10 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Building2 } from "lucide-react"
-import { CardSkeleton } from "../../components/ui/loading-skeleton"
+import { CardSkeleton } from "@/components/ui/loading-skeleton"
 import { useLanguage } from "../../context/language-context"
-import { getImageUrl } from "../../lib/config"
-import type { Direction } from "../../lib/types"
+import { getImageUrl } from "@/lib/config"
+import type { Direction } from "@/lib/types"
 
 interface DepartmentsSectionProps {
   departments: Direction[]

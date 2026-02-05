@@ -1,25 +1,28 @@
 "use client"
 
 import Image from "next/image"
-import { Globe, Users, Cpu,DockIcon,HelpCircle } from "lucide-react"
-import { DoctorCardSkeleton, Skeleton } from "../../components/ui/loading-skeleton"
+import { Globe, Users, Cpu, DockIcon, HelpCircle, Heart, Stethoscope, Activity } from "lucide-react"
+import { Skeleton } from "@/components/ui/loading-skeleton"
+import { useLanguage } from "../../context/language-context"
 import { About } from "@/lib/types"
-import { Feature } from "next/dist/build/webpack/plugins/telemetry-plugin/telemetry-plugin"
 
 interface AboutSectionProps {
   isLoading?: boolean
-   about?: About | null
+  about?: About | null
 }
 
 const features = [
-  { icon: Globe, title: "LABORATORIYA" },
-  { icon: Users, title: "FIZIOTERAPIYA" },
-  { icon: Cpu, title: "AMBULATOR VA STATSIONARDAVOLASH" },
-  { icon:DockIcon, title: "TEZ TIBBIY YORDAM (1299)"},
-  { icon:HelpCircle, title: "MASLAHAT BERISH XIZMATI" },
+  { icon: Globe, title: "LABORATORIYA", title_ru: "ЛАБОРАТОРИЯ" },
+  { icon: Users, title: "FIZIOTERAPIYA", title_ru: "ФИЗИОТЕРАПИЯ" },
+  { icon: Cpu, title: "AMBULATOR VA STATSIONAR DAVOLASH", title_ru: "АМБУЛАТОРНОЕ И СТАЦИОНАРНОЕ ЛЕЧЕНИЕ" },
+  { icon: DockIcon, title: "TEZ TIBBIY YORDAM (1299)", title_ru: "СКОРАЯ МЕДИЦИНСКАЯ ПОМОЩЬ (1299)" },
+  { icon: HelpCircle, title: "MASLAHAT BERISH XIZMATI", title_ru: "КОНСУЛЬТАЦИОННАЯ СЛУЖБА" },
 ]
 
-export function AboutSection({ isLoading }: AboutSectionProps) {
+const backgroundIcons = [Heart, Stethoscope, Activity, Heart, Stethoscope]
+
+export function AboutSection({ isLoading, about }: AboutSectionProps) {
+  const { language, t } = useLanguage()
 
   if (isLoading) {
     return (
@@ -40,30 +43,74 @@ export function AboutSection({ isLoading }: AboutSectionProps) {
     )
   }
 
+  const aboutTextUz = `Эндокринология кардиология неврология шифохонаси тўғрисида маълумот
+         Шифохона  2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган.  2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. 
+      Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. 
+       Шифохона малакали кадрлар билан тўла таъминланган.
+       2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади. 
+.`
+
+  const aboutTextRu = `Эндокринология кардиология неврология шифохонаси тўғрисида маълумот
+         Шифохона  2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган.  2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. 
+      Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. 
+       Шифохона малакали кадрлар билан тўла таъминланган.
+       2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади. 
+`
+
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <div className="flex flex-col lg:flex-row gap-12 items-center">
+    <section className="py-16 px-4 max-w-7xl mx-auto relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
+        {backgroundIcons.map((Icon, i) => (
+          <div
+            key={i}
+            className="absolute text-[#1e4a8d]"
+            style={{
+              left: `${(i * 20 + 10) % 90}%`,
+              top: `${(i * 30 + 10) % 80}%`,
+              animation: `float-icon ${6 + i * 2}s ease-in-out infinite`,
+              animationDelay: `${i * 0.8}s`,
+            }}
+          >
+            <Icon className="w-20 h-20" />
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-12 items-center relative z-10">
         {/* Image */}
         <div className="w-full lg:w-1/2 animate-fade-in-up">
-          <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl group">
             <Image
-              src="/about.jpg"
-              alt="Akfa Medline University Hospital"
+              src="/photo4.jpg"
+              alt="Sog'lom Ona va Bola"
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
         </div>
 
         {/* Content */}
         <div className="w-full lg:w-1/2 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <h2 className="text-3xl font-bold text-[#d32f2f] mb-4">Klinika haqida</h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
-       Шифохонамиз 2022 ийл октябрь ойида уз иш фаолятини бошлаган.Шифохонамаз Тошкент шахар Бектемир тумани  Обод кучаси 123 уйда жойлашган булиб,клиникамизда Педиатрия,Невралогия Эндокринология Гинекология,Умумий Терапия,Оторинолорингология булимлари ташкил килинган.ва 25 урин жой тури билан таминланган.Палаталаримизда хамма шаройтлар мавжуд булиб люкс каторига киради.Соглом она ва бола клиникаси 2022 ийлдан буён она ва бола хамда нуронийларимизни саломатлигини мухофаза килиш,ерта ташхис ва сифатли даволаш ишларини амалга ошириб келмокда 
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#1e4a8d] via-[#0d7377] to-[#d32f2f] bg-clip-text text-transparent mb-6">
+            {t("Klinika haqida", "О клинике")}
+          </h2>
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg">{language === "ru" ? aboutTextRu : aboutTextUz}</p>
+           
+          </div>
 
+          
         </div>
       </div>
+
+      {/* Custom animations */}
+      <style jsx>{`
+        @keyframes float-icon {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+          50% { transform: translate(20px, -30px) rotate(10deg); opacity: 0.6; }
+        }
+      `}</style>
     </section>
   )
 }

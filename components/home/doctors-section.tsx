@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Users } from "lucide-react"
-import { CardSkeleton } from "../../components/ui/loading-skeleton"
+import { CardSkeleton } from "@/components/ui/loading-skeleton"
 import { useLanguage } from "../../context/language-context"
 import { getImageUrl } from "@/lib/config"
 import type { Doctor } from "@/lib/types"
