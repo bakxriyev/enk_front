@@ -43,9 +43,19 @@ export function AboutSection({ isLoading, about }: AboutSectionProps) {
     )
   }
 
-  const aboutTextUz = `ENDOKRINOLOGIYA shifoxonasi 2022 yil oktabr oyida o'z faoliyatini boshlagan. Klinikamiz Toshkent shahar Bektemir tumani, Obod ko'chasi 123-uyda joylashgan. Klinikamizda quyidagi bo'limlar mavjud: Pediatriya, Nevrologiya, Endokrinologiya, Ginekologiya, Umumiy terapiya, Otorinolaringologiya. Klinika 25 o'rinli joy bilan ta'minlangan. Palatalarda barcha sharoitlar mavjud bo'lib, lyuks toifasiga kiradi.`
+  const aboutTextUz = `Эндокринология кардиология неврология шифохонаси тўғрисида маълумот
+         Шифохона  2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган.  2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. 
+      Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. 
+       Шифохона малакали кадрлар билан тўла таъминланган.
+       2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади. 
+.`
 
-  const aboutTextRu = `Клиника "ENDOKRINOLOGIYA" начала свою деятельность в октябре 2022 года. Наша клиника расположена в Бектемирском районе города Ташкента, по адресу: улица Обод, дом 123. В клинике работают следующие отделения: Педиатрия, Неврология, Эндокринология, Гинекология, Общая терапия, Оториноларингология. Клиника располагает 25 койко-местами. Все палаты оснащены всеми удобствами и относятся к категории люкс.`
+  const aboutTextRu = `Эндокринология кардиология неврология шифохонаси тўғрисида маълумот
+         Шифохона  2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган.  2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. 
+      Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. 
+       Шифохона малакали кадрлар билан тўла таъминланган.
+       2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади. 
+`
 
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto relative overflow-hidden">
@@ -87,30 +97,10 @@ export function AboutSection({ isLoading, about }: AboutSectionProps) {
           </h2>
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p className="text-base md:text-lg">{language === "ru" ? aboutTextRu : aboutTextUz}</p>
-            <p className="text-base font-medium text-[#1e4a8d]">
-              {t(
-                "ENDOKRINOLOGIYA klinikasi 2022 yildan buyon ona va bola hamda nuroniylarimizning sog'lig'ini muhofaza qilish, erta tashxis va sifatli davolash ishlarini amalga oshirib kelmoqda.",
-                "Клиника 'ENDOKРИНОЛОГИЯ' с 2022 года занимается охраной здоровья матери и ребенка, ранней диагностикой и качественным лечением.",
-              )}
-            </p>
+           
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="flex items-start gap-3 p-4 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up border border-gray-100"
-                style={{ animationDelay: `${0.3 + 0.1 * index}s` }}
-              >
-                <div className="w-12 h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-[#0d7377] to-[#1e4a8d] flex items-center justify-center shadow-lg">
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-sm font-semibold text-[#1e4a8d] leading-tight pt-2">
-                  {language === "ru" ? feature.title_ru : feature.title}
-                </span>
-              </div>
-            ))}
-          </div>
+          
         </div>
       </div>
 

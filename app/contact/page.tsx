@@ -43,19 +43,14 @@ export default function ContactPage() {
 
   const contactInfo = {
     uz: {
-      description:
-        "Bizning Sog'lom Ona va Bola klinikamiz 24/7 ish faoliyatida. Bilimli va malakali mehribon, mehnatsevar xodimlar xizmat ko'rsatadi. Laboratoriya, Fizoterapiya, Ambulator va statsionar davolash, tez tibbiy yordam xizmati (1299) mavjud.",
-      workingHours: "Dushanba - Juma: 08:00 - 20:00",
-      saturday: "Shanba: 09:00 - 18:00",
-      sunday: "Yakshanba: Dam olish",
+      description:"Эндокринология кардиология неврология шифохонаси тўғрисида маълумот Шифохона 2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган. 2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. Шифохона малакали кадрлар билан тўла таъминланган. 2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади",
+      workingHours: "Har kuni: 24/7",
       emergency: "Shoshilinch yordam: 24/7",
     },
     ru: {
       description:
-        "Наша клиника 'Здоровая Мать и Ребенок' работает 24/7. Знающие и квалифицированные, заботливые и трудолюбивые сотрудники оказывают услуги. Доступны лаборатория, физиотерапия, амбулаторное и стационарное лечение, служба скорой помощи (1299).",
-      workingHours: "Понедельник - Пятница: 08:00 - 20:00",
-      saturday: "Суббота: 09:00 - 18:00",
-      sunday: "Воскресенье: Выходной",
+        "Эндокринология кардиология неврология шифохонаси тўғрисида маълумот Шифохона 2024 йил 1 апрелдан бошлаб фаолият юритишни бошлаган бўлиб, эндокринология кардиология неврология бўлимлар ташкил килинган. 2024 йилда 688 нафар фуқаро даволанган бўлса, 2025 йил 1 ноябр холатига 1738 нафар бемор стационар шароитида даволаниб чиққан. Шифохонадада 2,3,4 ўринли палаталар ташкил қилинган, барча палаталарда ЛЮКС шароити мавжуд. Беморланга дори-дармон, лаборатория хизмати, УЗИ диагностикаси,физиолечение ва 3 махал иссиқ овқат ташкил қилинган. Шифохона малакали кадрлар билан тўла таъминланган. 2026 йилда шифохона худудида 300 ўринга мунжалланган қўшимча бино қурилиш режалаштирилган. Янги бинода хирургия, реанимация, ЛОР, ва травматология бўлимлари хизмат кўрсатади. .",
+      workingHours: "24/7",
       emergency: "Экстренная помощь: 24/7",
     },
   }
@@ -100,17 +95,14 @@ export default function ContactPage() {
           </h1>
           <p className="text-white/90 max-w-2xl text-lg drop-shadow-lg">{currentContent.description}</p>
 
-          <button className="mt-6 flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm hover:bg-white/20 transition-all shadow-lg">
-            {t("Pastga aylantiring", "Прокрутите вниз")} <ChevronDown className="w-4 h-4 animate-bounce" />
-          </button>
+          
 
           {/* Social links */}
           <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-3">
             {[
-              { Icon: Facebook, link: about?.facebook || "#" },
-              { Icon: Instagram, link: about?.instagram || "#" },
-              { Icon: Send, link: about?.telegram || "#" },
-              { Icon: Youtube, link: about?.youtube || "#" },
+              { Icon: Instagram, link: "https://www.instagram.com/endokrinolog_uz_/" || "#" },
+              { Icon: Send, link: "https://t.me/endokrinologiya_kardialogiya" || "#" },
+              { Icon: Phone, link: "+9989 55 902 10 10" || "#" },
             ].map(({ Icon, link }, i) => (
               <a
                 key={i}
@@ -150,7 +142,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[#1e4a8d] font-semibold block mb-1">E-mail:</span>
                     <a href={`mailto:${about?.gmail}`} className="text-[#0d7377] hover:underline font-medium">
-                      {about?.gmail || "info@soglomona.uz"}
+                      {about?.gmail || "info@endolinic.uz"}
                     </a>
                   </div>
                 </div>
@@ -163,7 +155,7 @@ export default function ContactPage() {
                     <span className="text-[#1e4a8d] font-semibold block mb-1">{t("Telefon:", "Телефон:")}</span>
                     <div className="space-y-1">
                       <a href={`tel:${about?.phone}`} className="text-[#0d7377] hover:underline font-medium block">
-                        {about?.phone || "+998 71 203-30-03"}
+                        {about?.phone || "+9989 55 902 10 10"}
                       </a>
                       {about?.phone2 && (
                         <a href={`tel:${about.phone2}`} className="text-[#0d7377] hover:underline font-medium block">
@@ -182,8 +174,8 @@ export default function ContactPage() {
                     <span className="text-[#1e4a8d] font-semibold block mb-1">{t("Manzil:", "Адрес:")}</span>
                     <p className="text-gray-600 font-medium">
                       {language === "ru"
-                        ? about?.manzil_ru || "г. Ташкент, Бектемирский район, ул. Обод, 123"
-                        : about?.manzil || "Toshkent shahri, Bektemir tumani, Obod ko'chasi, 123"}
+                        ?  "Клх. Правда Ташкентская область"
+                        : "Клх. Правда Ташкентская область"}
                     </p>
                   </div>
                 </div>
@@ -219,7 +211,7 @@ export default function ContactPage() {
               )}
             </p>
             <a
-              href="https://t.me/bakxriyevvv"
+              href="https://t.me/endokrinologiya_kardialogiya"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-[#1e4a8d] px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all shadow-lg"
@@ -232,10 +224,10 @@ export default function ContactPage() {
               <h3 className="font-semibold mb-3">{t("Ijtimoiy tarmoqlar", "Социальные сети")}</h3>
               <div className="flex gap-3">
                 {[
-                  { Icon: Facebook, link: about?.facebook || "#" },
-                  { Icon: Instagram, link: about?.instagram || "#" },
-                  { Icon: Send, link: about?.telegram || "#" },
-                  { Icon: Youtube, link: about?.youtube || "#" },
+              
+                  { Icon: Instagram, link: "https://www.instagram.com/endokrinolog_uz_/" || "#" },
+              { Icon: Send, link: "https://t.me/endokrinologiya_kardialogiya" || "#" },
+              { Icon: Phone, link: "+9989 55 902 10 10" || "#" },
                 ].map(({ Icon, link }, i) => (
                   <a
                     key={i}
