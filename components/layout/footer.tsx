@@ -29,7 +29,6 @@ export function Footer() {
 
   const menuItems = [
     { labelUz: "Biz haqimizda", labelRu: "О нас", href: "/about" },
-    { labelUz: "Sug'urta", labelRu: "Страхование", href: "/insurance" },
     { labelUz: "Xizmatlar", labelRu: "Услуги", href: "/services" },
     { labelUz: "Shifokorlar", labelRu: "Врачи", href: "/doctors" },
     { labelUz: "Blog", labelRu: "Блог", href: "/blog" },
@@ -47,8 +46,8 @@ export function Footer() {
       " ENDOKRINOLOGIYA SHIFOXONASI",
     description_ru:
       " ENDOKRINOLOGIYA SHIFOXONASI",
-    manzil: "Клх. Правда Ташкентская область",
-    manzil_ru: "Клх. Правда Ташкентская область",
+    manzil: "Toshkent viloyati,Yuqori chirchiq tumani Guliston MFY, Zafar ko`chasi 19-uy",
+    manzil_ru: "Ташкентская область, Юкори Чирчикский район, Гулистон МФЙ, улица Зафар 19",
   }
 
   if (isLoading) {
@@ -161,19 +160,7 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Batafsil */}
-            <div>
-              <h4 className="font-semibold text-gray-900 mb-4">{t("Batafsil", "Подробнее")}</h4>
-              <ul className="space-y-3 text-sm">
-                {detailItems.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="text-gray-600 hover:text-[#c41e3a] transition-colors">
-                      {language === "ru" ? item.labelRu : item.labelUz}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          
 
             {/* Column 4: Address - static */}
             <div>

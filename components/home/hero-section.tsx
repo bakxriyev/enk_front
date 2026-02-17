@@ -41,7 +41,7 @@ const quickActions = [
   { icon: Shield, label: "Sug'urta", label_ru: "Страховка", href: "/insurance" },
   { icon: Layers, label: "Bo'limlar", label_ru: "Отделения", href: "/departments" },
   { icon: Users, label: "Shifokorlar", label_ru: "Врачи", href: "/doctors" },
-  { icon: Briefcase, label: "Karyera", label_ru: "Вакансии", href: "/career" },
+  { icon: Briefcase, label: "Yangiliklar", label_ru: "Вакансии", href: "/news" },
 ]
 
 const heroContent = {
@@ -635,12 +635,7 @@ export function HeroSection({ isLoading, about }: HeroSectionProps) {
               {content.titleSecond}
             </span>
           </h1>
-          <p
-            className="text-white/90 text-lg md:text-xl mb-10 max-w-3xl animate-fade-in-up font-medium drop-shadow-lg"
-            style={{ animationDelay: "0.2s" }}
-          >
-            {content.subtitle}
-          </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up mb-16" style={{ animationDelay: "0.4s" }}>
             <button
               onClick={handleContactClick}
