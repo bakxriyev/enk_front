@@ -36,7 +36,7 @@ export function Footer() {
 
   const detailItems = [
     { labelUz: "Karyera", labelRu: "Карьера", href: "/career" },
-    { labelUz: "AMUH hayoti", labelRu: "Жизнь AMUH", href: "/news" },
+    { labelUz: "Yangiliklar", labelRu: "Yangiliklar", href: "/news" },
     { labelUz: "Kontaktlar", labelRu: "Контакты", href: "/contact" },
   ]
 
@@ -45,7 +45,7 @@ export function Footer() {
     description:
       " ENDOKRINOLOGIYA SHIFOXONASI",
     description_ru:
-      " ENDOKRINOLOGIYA SHIFOXONASI",
+      " Эндокринологическая клиникаgit ",
     manzil: "Toshkent viloyati,Yuqori chirchiq tumani Guliston MFY, Zafar ko`chasi 19-uy",
     manzil_ru: "Ташкентская область, Юкори Чирчикский район, Гулистон МФЙ, улица Зафар 19",
   }
