@@ -82,7 +82,7 @@ export default function AboutPage() {
             className="text-white/90 text-xl max-w-3xl animate-fade-in-up drop-shadow-lg font-light"
             style={{ animationDelay: "0.3s" }}
           >
-            {language === "ru" ? "Мы заботимся о вашем здоровье с душой и профессионализмом" : "Sizning salomatligingiz biz uchun muhim - professionallik va mehribonlik bilan"}
+            {language === "ru" ? "Мы заботимся о вашем здоровье с душой и профессионализмом" : "Sizning salomatligingiz biz uchun muhim - professionallik va mehribonlik bilan xizmat qilamiz"}
           </p>
         </div>
       </div>
