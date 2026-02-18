@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Plus, Globe, Shield, Layers, Users, Briefcase, Heart, Activity, Stethoscope, Cross, X, Phone, MessageCircle, Instagram } from "lucide-react"
+import { Plus, Globe, Shield, Layers, Users, Briefcase, Heart, Activity, Stethoscope, Cross, X, Phone, MessageCircle, Instagram, Hospital } from "lucide-react"
 import { HeroSkeleton } from "@/components/ui/loading-skeleton"
 import { useLanguage } from "../../context/language-context"
 import { useState, useEffect } from "react"
@@ -38,7 +38,7 @@ interface TimeSlot {
 
 const quickActions = [
   { icon: Plus, label: "Qabulga yozilish", label_ru: "Записатьcя на прием", href: "/appointment" },
-  { icon: Shield, label: "Biz haqimizda", label_ru: "Biz haqimizda", href: "/about" },
+  { icon: Hospital, label: "Biz haqimizda", label_ru: "Biz haqimizda", href: "/about" },
   { icon: Layers, label: "Bo'limlar", label_ru: "Отделения", href: "/departments" },
   { icon: Users, label: "Shifokorlar", label_ru: "Врачи", href: "/doctors" },
   { icon: Briefcase, label: "Yangiliklar", label_ru: "Вакансии", href: "/news" },
