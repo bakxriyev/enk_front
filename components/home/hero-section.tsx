@@ -38,7 +38,7 @@ interface TimeSlot {
 
 const quickActions = [
   { icon: Plus, label: "Qabulga yozilish", label_ru: "Записатьcя на прием", href: "/appointment" },
-  { icon: Hospital, label: "Biz haqimizda", label_ru: "Biz haqimizda", href: "/about" },
+  { icon: Hospital, label: "Biz haqimizda", label_ru: "О нас", href: "/about" },
   { icon: Layers, label: "Bo'limlar", label_ru: "Отделения", href: "/departments" },
   { icon: Users, label: "Shifokorlar", label_ru: "Врачи", href: "/doctors" },
   { icon: Briefcase, label: "Yangiliklar", label_ru: "Вакансии", href: "/news" },
