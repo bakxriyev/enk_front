@@ -45,7 +45,7 @@ export function Footer() {
     description:
       " ENDOKRINOLOGIYA SHIFOXONASI",
     description_ru:
-      " Эндокринологическая клиникаgit ",
+      " Эндокринологическая клиника ",
     manzil: "Toshkent viloyati,Yuqori chirchiq tumani Guliston MFY, Zafar ko`chasi 19-uy",
     manzil_ru: "Ташкентская область, Юкори Чирчикский район, Гулистон МФЙ, улица Зафар 19",
   }
