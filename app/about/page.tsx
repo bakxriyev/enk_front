@@ -107,7 +107,7 @@ export default function AboutPage() {
 
           <div className="animate-fade-in-right" style={{ animationDelay: "0.2s" }}>
             <h2 className="text-4xl font-extrabold bg-gradient-to-r from-[#1e4a8d] via-[#0d7377] to-[#d32f2f] bg-clip-text text-transparent mb-6">
-              {t("Bizning haqimizda", "О нас")}
+              {t("Biz haqimizda", "О нас")}
             </h2>
             {isLoading ? (
               <div className="space-y-4">
