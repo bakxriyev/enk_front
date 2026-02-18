@@ -118,28 +118,22 @@ export default function DoctorDetailPage() {
 
             <div className="flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1ACDrfwnCj/?mibextid=wwXIfr"
                 className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/endokrinolog_uz_?igsh=dWJpcXN1YjJwbGpj"
                 className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://t.me/endokrinologiya_kardialogiya"
                 className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
               >
                 <Send className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
